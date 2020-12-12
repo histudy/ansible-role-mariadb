@@ -13,12 +13,14 @@
     path: "{{ mariadb_cfg.mysqld.innodb_data_home_dir }}"
     owner: mysql
     group: mysql
+    mode: "0755"
     state: directory
   when: mariadb_cfg.mysqld.innodb_data_home_dir is defined
 - name: create MariaDB custom setting file
   template:
     src: custom.cnf.j2
     dest: /etc/mysql/mariadb.conf.d/99-custom.cnf
+    mode: "0644"
   notify: restart mariadb
 - name: MariaDB is active and enable system on startup
   systemd:
