@@ -8,7 +8,6 @@ galaxy_info:
     versions:
       - stretch
       - buster
-  galaxy_tags:
-    - ansible
+  galaxy_tags: []
 
 dependencies: []
