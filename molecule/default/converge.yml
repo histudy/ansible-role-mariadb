@@ -6,4 +6,4 @@
   tasks:
     - name: "Include role"
       include_role:
-        name: mariadb
+        name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
